@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;900&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+    font-size: 100%;
+    text-size-adjust: none; /* text inflation algorithm */
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*  =============
+Table of Contents
+
+1. Colors
+2. Typography
+3. Buttons
+4. Shapes
+    4.1 Navigaton Chop
+5. Layout
+    5.1 General
+    5.2. Zigzag 
+    5.3 Images
+    5.4 Footer
+6. Media Query
+    6.1. Tablet
+    6.2 Mobile
+============== */
+
+
+/*  =============
+1. Colors
+============== */
+:root {
+    --primary-color: rgb(77, 150, 168);
+    --primary-light-color: rgb(143, 227, 249);
+    --secondary-color: rgb(133, 95, 177);
+    --secondary-light-color: rgb(217, 184, 255);
+    --dark-text: rgb(40, 40, 61);
+    --light-text: rgb(135, 135, 157);
+    --white-text: rgb(250, 250, 250);
+}
+h1, h2 {
+    color: var(--dark-text)
+}
+footer h1, footer h2 {
+    color: var(--white-text)
+}
+p {
+    color: var(--dark-text)    
+}
+footer p {
+    color: var(--white-text);
+}
+.overline {
+    color: var(--primary-color)
+}
+.navigation-chip {
+    color: var(--light-text)
+}
+button {
+    color: var(--white-text)
+}
+button span {
+    color: var(--light-text)
+}
+.btn-primary {
+    background-color: var(--primary-color)
+}
+.btn-primary:hover {
+    background-color: var(--primary-light-color)
+}
+.btn-secondary {
+    background-color: var(--secondary-color)
+}
+.btn-secondary:hover {
+    background-color: var(--secondary-light-color)
+}
+footer {
+    background-color: var(--primary-color);
+}
+/*  =============
+2. Typography
+============== */
+
+/* Font sizes are given relative to root size of 16px */
+:root {
+    --font-family: "Red Hat Display", Verdana, Helvetica,"Open Sans";
+    --base-font-size: 16px;
+}
+html {
+    font-size: var(--base-font-size)
+}
+html, body, div, span, button, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    font-family: var(--font-family);
+}
+h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 900;
+}
+h2 {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    font-weight: 900;
+}
+body  {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    font-weight: 500;
+}
+.overline {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    font-variant: small-caps;
+    font-weight: 900;
+    letter-spacing: 0.25rem;
+}
+.navigation-chip {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    font-weight: 900;
+}
+/*  =============
+3. Buttons
+============== */
+button {
+    display: inline-block;
+    /*height of the button = line-height + paddingtop + padding-bottom*/
+    border-radius: 1.813rem; /* half of the button height  */
+    font-size: 1rem;
+    line-height: 1.625rem;
+    padding: 1rem 1.813rem;
+    border: none;
+}
+
+/*  =============
+4. Shapes
+============== */
+.navigation-chip {
+    width: fit-content;
+}
+.navigation-chip::before {
+    content:"";
+    display: inline-block;
+    border: 1px solid var(--light-text);
+    height: 5.25rem;
+    /*It shoudl take up space */
+    position:relative;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+.nav-chip-circle{
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 50%;
+    border: 0.5px solid var(--light-text);
+    background-color: var(--white-text);
+}
+
+
+/*  =============
+5. Layout
+============== */
+
+/* 5.1. General */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; /*Don't show images that */
+}
+
+section h1, section h2, section p, section button, section .overline {
+    margin: 1rem;
+    text-align: center;
+}
+
+/* 5.2. Zigzag */
+/* Making that down-up "zigzag" effect + JS code injected*/ 
+.d-grid {
+    display: grid;
+    grid-template-areas: "zigzag-up prime zigzag-down";
+    grid-template-columns: repeat(3, 1fr);
+}
+.prime {
+    grid-area: prime;
+}
+.zigzag-up {
+    grid-area: zigzag-up;
+    transform: translateY(-15%);
+}
+.zigzag-down {
+    grid-area: zigzag-down;
+}
+.zigzag {
+    justify-items:center;
+}
+.zigzag img {
+    width: 110px;
+    border-radius: 50%;
+}
+
+/*-----------------------*/
+
+.prime, .zigzag-up, .zigzag-down {
+    width: 37.5vw;
+    margin-top: 4rem;
+} 
+
+.btn-group, .chip-container {
+    display: flex;
+    justify-content: center;
+}
+.chip-container {
+    padding: 4rem;
+}
+/* 5.3 Images */
+.images-container {
+    width: 77.08%;
+    display: flex;
+    justify-content: space-around;
+}
+img {
+    width: 17.71vw;
+}
+/* 5.4 Footer */
+/* Make chip before footer collapse with footer */
+.chip-container:last-child {
+    position: relative;
+    top: 2rem;
+    padding-bottom: 0;
+    z-index: 2;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+/* Set up transparent background-image for footer */
+footer::after {    
+    content: "";
+    background-image: url("./assets/desktop/image-footer.jpg");
+    background-size:cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index:-1;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 116px 1%;
+}
+footer h2, footer p, footer button {
+    width: 24.31%;
+    margin: 0 3.34%;
+}
+footer button {
+    width: fit-content;
+}
+/*  =============
+6. Media Query
+============== */
+/*  =============
+6.1. Tablet
+============== */
+@media only screen and (max-width:1000px) {
+    /* Remove text out of zigzag container grid to join 2 zigzag patterns*/
+    .d-grid {
+        display: grid;
+        grid-template-areas: "zigzag-up zigzag-down"
+                             "prime     prime"; 
+        grid-template-columns: 1fr 1fr; 
+        justify-items: center;
+        justify-items: center;
+    }
+/* Make zigzag container's elements (zigzag) be centered THEN*/
+    .d-grid {
+        justify-content: center;
+    }
+/* Make grid columns with class zigzag take more space then possible, so 
+it will overflow. Since it's centered in a parent it will overflow both
+left and right.*/
+    .zigzag {
+        width: 58vw;
+    }
+    .prime {
+        width: 75vw;
+    }
+    /* This was up in desktop view. In order to join it with other colunn of 3 x 2
+    pictures, get it back down*/
+    .zigzag-up {
+        transform: translateY(0);
+    }
+    footer div {
+        flex-direction: column;
+    }
+    footer h2, footer p, footer button {
+        margin: 4.34%;
+        text-align: center;
+    }
+    footer h2, footer p {
+        width: 75vw;
+    }
+}
+/*  =============
+6.2. Mobile
+============== */
+@media only screen and (max-width: 700px) {
+    .zigzag img {
+        width: 55px;
+    }
+/*  =============
+Typography
+============== */
+    h1 {
+        font-size: 2.5rem;
+        line-height: 2.75rem;
+    }
+    h2 {
+        font-size: 2rem;
+        line-height: 2.25rem;
+        font-weight: 900;
+    }
+/*  =============
+Layout
+============== */
+    .d-grid {
+        width: 100vw;
+    }
+    .prime {
+        width: 90vw;
+    }
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .images-container {
+        width: 77.08%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    img {
+        width: 40.27vw;
+    }
+}
